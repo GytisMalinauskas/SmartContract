@@ -12,11 +12,14 @@
   "keywords": [
     "solidity",
     "ethereum",
-    "blockchain"  
+    "blockchain"
   ],
   "author": "Fabio Jose Moraes <fabiojose@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.5"
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "install": "^0.13.0",
+    "lodash": "^4.17.5",
+    "solc": "^0.8.28"
   }
 }
