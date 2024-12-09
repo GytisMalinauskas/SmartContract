@@ -1,5 +1,3 @@
-require('dotenv').config();
-const HDWalletProvider = require('@truffle/hdwallet-provider');
 module.exports = {
  
   networks: {
@@ -19,12 +17,5 @@ module.exports = {
     solc: {
       version: "0.4.18", // Use this specific version
     },
-  },
-  sepolia: {
-    provider: () =>
-      new HDWalletProvider(
-        process.env.MNEMONIC,
-          `https://sepolia.infura.io/v3/${process.env.INFURA_PROJECT_ID}`      ),
-    network_id: 11155111,
   },
 };

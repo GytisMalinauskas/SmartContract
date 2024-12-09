@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My dApp</title>
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deal Contract dApp</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome to My dApp</h1>
-    <script src="js/app.js"></script>
+  <div class="container">
+    <header>
+      <img src="images/logo.png" alt="Logo" id="logo">
+      <h1>Deal Smart Contract dApp</h1>
+    </header>
+    
+    <!-- Buyer Info Section -->
+    <section id="buyer-info">
+      <h2>Buyer Info</h2>
+      <p>Address: <span id="buyerAddress"></span></p>
+      <button onclick="sendOrder()">Send Order</button>
+    </section>
+
+    <!-- Seller Info Section -->
+    <section id="seller-info">
+      <h2>Seller Info</h2>
+      <p>Address: <span id="sellerAddress"></span></p>
+      <button onclick="sendPrice()">Send Price</button>
+    </section>
+
+    <!-- Order Info Section -->
+    <section id="order-info">
+      <h2>Order Info</h2>
+      <p>Order Number: <span id="orderNumber"></span></p>
+      <p>Goods: <span id="goods"></span></p>
+      <p>Quantity: <span id="quantity"></span></p>
+      <p>Price: <span id="price"></span></p>
+    </section>
+
+    <footer>
+      <p>Powered by Ethereum</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
