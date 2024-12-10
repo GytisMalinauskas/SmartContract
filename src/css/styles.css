@@ -1,0 +1,18 @@
+body {
+ background-color:aquamarine;
+}
+
+.nuotrauka{
+  width: 250px;
+  height: 200px;
+  border-radius: 12px;
+}
+header{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.green-background {
+  background-color: #198754 !important; 
+  color: white; 
+}

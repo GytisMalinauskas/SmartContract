@@ -3,45 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deal Contract dApp</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>dApp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
+  <div class="container py-4">
     <header>
-      <img src="images/logo.png" alt="Logo" id="logo">
-      <h1>Deal Smart Contract dApp</h1>
+      <img src="./images/logo.png" class = "nuotrauka" alt="Logo" id="logo">
     </header>
-    
-    <!-- Buyer Info Section -->
-    <section id="buyer-info">
-      <h2>Buyer Info</h2>
-      <p>Address: <span id="buyerAddress"></span></p>
-      <button onclick="sendOrder()">Send Order</button>
-    </section>
+    <!-- Pirkėjo dalis -->
+    <div class="card mb-4">
+      <div class="card-header bg-warning">
+        <h4 class="fw-bold">PIRKĖJO FUNKCIJOS</h4>
+      </div>
+      <div class="card-body">
+        <!-- sendOrder -->
+        <form id="sendOrderForm" class="mb-3">
+          <h5 class="fw-bold">Pateikti užsakymą</h5>
+          <div class="mb-3">
+            <label for="goods" class="form-label">Prekės pavadinimas</label>
+            <input type="text" id="goods" class="form-control" placeholder="Pvz., telefonas" required>
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Kiekis</label>
+            <input type="number" id="quantity" class="form-control" placeholder="Pvz., 10" required>
+          </div>
+          <button type="submit" class="btn btn-success fw-bolder">Pateikti</button>
+        </form>
 
-    <!-- Seller Info Section -->
-    <section id="seller-info">
-      <h2>Seller Info</h2>
-      <p>Address: <span id="sellerAddress"></span></p>
-      <button onclick="sendPrice()">Send Price</button>
-    </section>
+        <!-- sendSafepay -->
+        <form id="sendSafepayForm">
+          <h5 class="fw-bold">Apmokėti užsakymą</h5>
+          <div class="mb-3">
+            <label for="orderno" class="form-label">Užsakymo numeris</label>
+            <input type="number" id="orderno" class="form-control" placeholder="Pvz., 1" required>
+          </div>
+          <div class="mb-3">
+            <label for="amount" class="form-label">Suma (ETH)</label>
+            <input type="text" id="amount" class="form-control" placeholder="Pvz., 0.5" required>
+          </div>
+          <button type="submit" class="btn btn-success fw-bolder">Apmokėti</button>
+        </form>
+      </div>
+    </div>
 
-    <!-- Order Info Section -->
-    <section id="order-info">
-      <h2>Order Info</h2>
-      <p>Order Number: <span id="orderNumber"></span></p>
-      <p>Goods: <span id="goods"></span></p>
-      <p>Quantity: <span id="quantity"></span></p>
-      <p>Price: <span id="price"></span></p>
-    </section>
+    <!-- Pardavėjo dalis -->
+    <div class="card mb-4">
+      <div class="card-header bg-warning">
+        <h4 class="fw-bold">PARDAVĖJO FUNKCIJOS</h4>
+      </div>
+      <div class="card-body">
+        <!-- sendPrice -->
+        <form id="sendPriceForm" class="mb-3">
+          <h5 class="fw-bold">Nustatyti kainą</h5>
+          <div class="mb-3">
+            <label for="priceOrderNo" class="form-label">Užsakymo numeris</label>
+            <input type="number" id="priceOrderNo" class="form-control" placeholder="Pvz., 1" required>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Kaina (ETH)</label>
+            <input type="text" id="price" class="form-control" placeholder="Pvz., 0.2" required>
+          </div>
+          <button type="submit" class="btn btn-success fw-bolder">Nustatyti</button>
+        </form>
 
-    <footer>
-      <p>Powered by Ethereum</p>
-    </footer>
+        <!-- sendInvoice -->
+        <form id="sendInvoiceForm">
+          <h5 class="fw-bold">Pridėti sąskaitą</h5>
+          <div class="mb-3">
+            <label for="invoiceOrderNo" class="form-label">Užsakymo numeris</label>
+            <input type="number" id="invoiceOrderNo" class="form-control" placeholder="Pvz., 1" required>
+          </div>
+          <div class="mb-3">
+            <label for="deliveryDate" class="form-label">Pristatymo data (Unix Timestamp)</label>
+            <input type="number" id="deliveryDate" class="form-control" placeholder="Pvz., 1700000000" required>
+          </div>
+          <div class="mb-3">
+            <label for="courier" class="form-label">Kurjerio adresas</label>
+            <input type="text" id="courier" class="form-control" placeholder="Pvz., 0x123..." required>
+          </div>
+          <button type="submit" class="btn btn-success fw-bolder">Pridėti sąskaitą</button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
-  <script src="js/app.js"></script>
+  <script type="module" src="./js/app.js"></script>
+
 </body>
 </html>
